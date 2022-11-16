@@ -1,5 +1,6 @@
 <?php
 
+use App\Services\Logger\PgLogger\Logger\DatabaseLogger;
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
@@ -70,6 +71,10 @@ return [
             'days' => 14,
         ],
 
+        'db' => [
+            'driver' => 'custom',
+            'via' => DatabaseLogger::class,
+        ],
         'slack' => [
             'driver' => 'slack',
             'url' => env('LOG_SLACK_WEBHOOK_URL'),
