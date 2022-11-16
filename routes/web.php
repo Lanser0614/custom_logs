@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    Log::channel('db')->error('Your message');
+throw new Exception('salom');
+    //    Log::channel('db')->error('Your message');
 //    return view('welcome');
 });

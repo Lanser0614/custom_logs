@@ -45,7 +45,7 @@ class   Handler extends ExceptionHandler
     public function register()
     {
         $this->reportable(function (Throwable $e) {
-
+            Log::channel('db')->error($e->getMessage());
         });
     }
 }
