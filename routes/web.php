@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/test-exception', function () {
+throw new \RuntimeException('hello Exception');
+});
+
 Route::get('/', function () {
-throw new Exception('salom');
-    //    Log::channel('db')->error('Your message');
-//    return view('welcome');
+    Log::channel('db')->info('info log');
 });
